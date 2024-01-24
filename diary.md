@@ -25,3 +25,5 @@ browser 는 typescript를 이해하지 못한다. 다만 javascript만 이해할
 npx create-react-app 내 앱 이름 --template typescript 
 npm i --save-dev @types/styled-components 
 npm i styled-components
+
+interface를 통해서 안전하게 properties를 받을 수 있음.
