@@ -1,22 +1,30 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 interface CircleProps{
     bgColor:string;
+    borderColor?:string;
+    text?:string;
 }
 
-interface ContainerPrpos{
-    bgColor:string;
-}
-
-const Container = styled.div<ContainerPrpos>`
+ 
+const Container = styled.div<CircleProps>`
     width:100px;
     height:100px;
-    background-color:${props=>props.bgColor};
+    background-color:${(props)=>props.bgColor};
+    border:1px solid ${(props)=>props.borderColor};
     border-radius:50%;
 `;
 
-function Circle({bgColor}:CircleProps){
-    return <Container bgColor={bgColor}/ >;
+function Circle({bgColor,borderColor,text="default text"}:CircleProps){
+    
+    const [counter,setCounter] = useState(1);
+
+    return (
+        <Container bgColor={bgColor} borderColor={borderColor ?? bgColor}>
+            {text}
+        </Container>
+    );
 }
 
 export default Circle;

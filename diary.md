@@ -27,3 +27,8 @@ npm i --save-dev @types/styled-components
 npm i styled-components
 
 interface를 통해서 안전하게 properties를 받을 수 있음.
+
+optional을 적용시키고 싶으면 ? 를 뒤에 붙이면 된다.
+
+const [count,setCount] = useState(1);
+이렇게 하면 count의 타입은 number가 된다. 그리고 count에 값을 세팅할 때는 setCount(2); 이런식으로 작성할 수 있다.
