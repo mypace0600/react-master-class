@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { styled } from "styled-components";
-import Router from "./router";
+import Router from "./Router";
 
 function App() {
   return (

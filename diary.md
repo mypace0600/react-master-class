@@ -32,3 +32,7 @@ optional을 적용시키고 싶으면 ? 를 뒤에 붙이면 된다.
 
 const [count,setCount] = useState(1);
 이렇게 하면 count의 타입은 number가 된다. 그리고 count에 값을 세팅할 때는 setCount(2); 이런식으로 작성할 수 있다.
+
+
+---
+fetch data : react query

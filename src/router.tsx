@@ -1,16 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import About from "./screens/About";
-import Home from "./screens/Home";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Coin from "./routes/Coin";
+import Coins from "./routes/Coins";
 
 function Router(){
     return <BrowserRouter>
-        <Header />
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/about" element={<About/>}/>
-        </Routes>
-    </BrowserRouter>
+        <Switch>
+            <Route path="/:coinId">
+                <Coin />
+            </Route>
+            <Route path="/">
+                <Coins/>
+            </Route>
+        </Switch>
+        </BrowserRouter>
 }
 
 export default Router;
