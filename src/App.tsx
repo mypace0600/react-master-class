@@ -54,7 +54,10 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <Router />
+    <>
+      <GlobalStyle/>
+      <Router />
+    </>
   );
 }
 
