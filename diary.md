@@ -34,5 +34,8 @@ const [count,setCount] = useState(1);
 이렇게 하면 count의 타입은 number가 된다. 그리고 count에 값을 세팅할 때는 setCount(2); 이런식으로 작성할 수 있다.
 
 
----
-fetch data : react query
+
+///
+CSS 초기화 : https://github.com/zacanger/styled-reset/blob/master/src/index.ts
+폰트 : https://fonts.google.com/
+색상 : https://flatuicolors.com/palette/gb
