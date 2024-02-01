@@ -39,3 +39,24 @@ const [count,setCount] = useState(1);
 CSS 초기화 : https://github.com/zacanger/styled-reset/blob/master/src/index.ts
 폰트 : https://fonts.google.com/
 색상 : https://flatuicolors.com/palette/gb
+
+///
+코인정보 : https://api.coinpaprika.com/v1/coins
+코인아이콘 : https://coinicons-api.vercel.app/
+코인가격 : https://api.coinpaprika.com/v1/ticker
+
+///
+Link에 state를 넣어서 정보를 넘기는 경우 useLocation을 통해서 interface에 해당하는 정보를 가져올 수 있는데, 이럴 경우 링크의 url에 직접 접근하게 되면 에러가 난다. 이유는 state를 공유받지 않았기 때문이다.
+그래서 이러한 점을 해소하기 위한 방법이 필요해보인다.
+
+///
+useEffect 를 사용하면 fetch로 데이터를 가지고 와서 useState로 만들어둔 state에 setting을 할 수 있다.
+
+///
+Nested Router는 말 그대로 중첩된 Router이다.
+Router로 불러온 컴포넌트 내부에 Router가 하나 더 존재하는 형태인 것이다. 
+다만, 상위 컴포넌트의 URL값을 공유하고, 상태값을 주소값이 일부 대처하는 정도의 특징을 보인다.
+
+
+///
+react query

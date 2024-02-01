@@ -15,6 +15,11 @@ const Header = styled.header`
     align-items:center;
 `;
 
+const Title = styled.h1`
+    font-size:48px;
+    color:${props=>props.theme.accentColor};
+`;
+
 const CoinsList = styled.ul``;
 
 const Coin = styled.li`
@@ -25,18 +30,14 @@ const Coin = styled.li`
     a{
         padding:20px;
         transition:color 0.2s ease-in;
-        display:block;
+        display:flex;
+        align-items:center;
     }
     &:hover{
        a {
         color:${(props)=>props.theme.accentColor};
        } 
     }
-`;
-
-const Title = styled.h1`
-    font-size:48px;
-    color:${props=>props.theme.accentColor};
 `;
 
 interface CoinProps{
@@ -47,12 +48,18 @@ interface CoinProps{
     is_new: boolean,
     is_active: boolean,
     type: string
-}
+};
 
 const Loader = styled.span`
     text-align:center;
     display:block;
-`
+`;
+
+const Img = styled.img`
+    width:25px;
+    height:25px;
+    margin-right:10px;
+`;
 
 function Coins(){
     const [coins, setCoins] = useState<CoinProps[]>([]);
@@ -76,7 +83,11 @@ function Coins(){
                 <CoinsList>
                     {coins.map((coin)=>(
                         <Coin key={coin.id}>
-                            <Link to={`/${coin.id}`}>
+                            <Link to={{
+                                pathname:`/${coin.id}`,
+                                state:{name:coin.name},
+                            }}>
+                                <Img src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}/>    
                                 {coin.name} &rarr;
                             </Link>
                         </Coin>
