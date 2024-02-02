@@ -73,6 +73,8 @@ fetching, caching, 서버 데이터와의 동기화를 지원해주는 라이브
 [npm i -D @tanstack/react-query-devtools]
 ReactQueryDevtools를 통해서 화면에서 query를 확인할 수 있고 cache에 무엇을 저장했는지도 볼 수 있다.
 
+그리고 refetchInterval을 사용하여 패치 재시작 시간을 조정할 수 있다.
+
 ///
 useParams(); 를 통해서 전달 된 파라미터를 볼 수 있다.
 
@@ -83,6 +85,11 @@ useParams(); 를 통해서 전달 된 파라미터를 볼 수 있다.
 니코가 만든 코인가격 API : https://ohlcv-api.nomadcoders.workers.dev?coinId=btc-bitcoin
 ///
 APEXCHARTS : https://apexcharts.com/
+
+///
+react helmet
+npm i react-helmet
+npm i --save-dev @types/react-helmet
 ///
 coin project 정리
 react query를 통한 외부 API 호출, Link와 Router를 통해서 화면 전환 및 데이터 전달 기능

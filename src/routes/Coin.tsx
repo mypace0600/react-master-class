@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import { fetchCoinInfo, fetchCoinPrice } from "../api";
 import Chart from "./Chart";
 import Price from "./Price";
+import { Helmet } from "react-helmet";
 
 interface CoinProps{
     coinId:string;
@@ -144,11 +145,18 @@ function Coin(){
     const priceMatch = useRouteMatch("/:coinId/price");
     const chartMatch = useRouteMatch("/:coinId/chart");
     const { isLoading: infoLoading, data:infoData } = useQuery<IInfo>(["info",coinId],()=>fetchCoinInfo(coinId));
-    const { isLoading: priceLoading, data:priceData } = useQuery<IPrice>(["price",coinId],()=>fetchCoinPrice(coinId));
+    const { isLoading: priceLoading, data:priceData } = useQuery<IPrice>(["price",coinId],()=>fetchCoinPrice(coinId),{
+        refetchInterval:5000,
+    });
     
     const loading = infoLoading || priceLoading ;
     return  (
         <Container>
+            <Helmet>
+                <title>
+                    {state?.name ? state.name : loading ? "Loading.." : infoData?.name}
+                </title>
+            </Helmet>
             <Header>
                 <Title>{state?.name ? state.name : loading ? "Loading.." : infoData?.name}</Title>
             </Header>
@@ -166,8 +174,8 @@ function Coin(){
                             <span>${infoData?.symbol}</span>
                         </OverviewItem>
                         <OverviewItem>
-                            <span>Open Source:</span>
-                            <span>{infoData?.open_source ? "Yes" : "No"}</span>
+                            <span>Price:</span>
+                            <span>$ {priceData?.quotes.USD.price.toFixed(3)}</span>
                         </OverviewItem>
                     </Overview>
                     <Description>{infoData?.description}</Description>
