@@ -50,13 +50,18 @@ Link에 state를 넣어서 정보를 넘기는 경우 useLocation을 통해서 i
 그래서 이러한 점을 해소하기 위한 방법이 필요해보인다.
 
 ///
+styled-components 로 생성한 html tag에 props를 전달하고 싶을 때는 
+https://styled-components.com/docs/basics#adapting-based-on-props
+공식문서를 확인해보자.
+
+
+///
 useEffect 를 사용하면 fetch로 데이터를 가지고 와서 useState로 만들어둔 state에 setting을 할 수 있다.
 
 ///
 Nested Router는 말 그대로 중첩된 Router이다.
 Router로 불러온 컴포넌트 내부에 Router가 하나 더 존재하는 형태인 것이다. 
 다만, 상위 컴포넌트의 URL값을 공유하고, 상태값을 주소값이 일부 대처하는 정도의 특징을 보인다.
-
 
 ///
 react query
@@ -67,3 +72,17 @@ fetching, caching, 서버 데이터와의 동기화를 지원해주는 라이브
 
 [npm i -D @tanstack/react-query-devtools]
 ReactQueryDevtools를 통해서 화면에서 query를 확인할 수 있고 cache에 무엇을 저장했는지도 볼 수 있다.
+
+///
+useParams(); 를 통해서 전달 된 파라미터를 볼 수 있다.
+
+///
+기존에 가지고 있는 정보를 route를 통해서 이동한 화면에서도 사용해야 한다면 props를 통해서 보내고, interface를 통해서 받을 수 있다.
+
+///
+니코가 만든 코인가격 API : https://ohlcv-api.nomadcoders.workers.dev?coinId=btc-bitcoin
+///
+APEXCHARTS : https://apexcharts.com/
+///
+coin project 정리
+react query를 통한 외부 API 호출, Link와 Router를 통해서 화면 전환 및 데이터 전달 기능
