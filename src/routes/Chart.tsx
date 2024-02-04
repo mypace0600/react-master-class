@@ -71,7 +71,3 @@ function Chart({coinId}:ChartProps){
 }
 
 export default Chart;
-
-function formatTimeStamp(arg0: string[] | undefined): any {
-    throw new Error("Function not implemented.");
-}
